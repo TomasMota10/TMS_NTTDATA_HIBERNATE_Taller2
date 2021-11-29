@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Configuración conexión Oracle -->
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521/xepdb1?createDataBaseIfNotExist=true</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+		<property name="connection.username">sys as SYSDBA</property>
+		<property name="connection.password">rootroot</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.show_sql">false</property>
+
+		<!-- MAPEOS -->
+		<mapping class="com.nttdata.hibernate.persistence.NttDataCustomer" />
+		<mapping class="com.nttdata.hibernate.persistence.NttDataContract" />
+
+	</session-factory>
+</hibernate-configuration>
